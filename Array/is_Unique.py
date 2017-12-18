@@ -1,8 +1,8 @@
-#find out if a string is unique, and try not to use any data structures.
-
 #ASCII or Unicode
+
 def is_unique(string):
     """
+    Find out if a string is unique, and try not to use any data structures.
     :param string: str
     :return: boolean
     """
