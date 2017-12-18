@@ -1,4 +1,5 @@
 #ASCII or Unicode
+import unittest
 
 def is_unique(string):
     """
@@ -6,6 +7,9 @@ def is_unique(string):
     :param string: str
     :return: boolean
     """
+    # assume only ASCII
+    if len(string) > 128:
+        return False
     hashset = set()
     for i in range(len(string)):
         if string[i] not in hashset:
@@ -18,6 +22,9 @@ def is_unique(string):
 #space_complexity = (O(N))
 
 def is_unique_without_memory(string):
+
+    if len(string) > 128:
+        return False
     for i in range(len(string)):
         for j in range(len(string)):
             if i != j and string[i] == string[j]:
@@ -27,8 +34,17 @@ def is_unique_without_memory(string):
 #time_complexity = O(N^2)
 #space_complexity = (O(1))
 
-print(is_unique("abcd"))
-print(is_unique("aa"))
+class Test(unittest.TestCase):
+    dataT = [('abcd'), ('s4fad'), ('')]
+    dataF = [('23ds2'), ('hb 627jh=j ()')]
 
-print(is_unique_without_memory("abcd"))
-print(is_unique_without_memory("aa"))
+    def test_unique(self):
+        for test_string in self.dataT:
+            actual = is_unique(test_string)
+            self.assertTrue(actual)
+        for test_string in self.dataF:
+            actual = is_unique(test_string)
+            self.assertFalse(actual)
+
+if __name__ == '__main__':
+    unittest.main()

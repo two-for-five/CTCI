@@ -1,5 +1,5 @@
 #space and case sensitive
-
+import unittest
 def check_permutation(str1, str2):
     """
     Check if str1 is permutation of str2
@@ -28,6 +28,25 @@ def check_permutation(str1, str2):
 
 #time complexity(M + N)
 #space complexity(N)
-print(check_permutation("ab c", "c ba"))
-print(check_permutation("a", "abc"))
-print(check_permutation("abc", "a"))
+
+class Test(unittest.TestCase):
+    dataT = (
+        ('abcd', 'bacd'),
+        ('3563476', '7334566'),
+        ('wef34f', 'wffe34'),
+    )
+    dataF = (
+        ('abcd', 'd2cba'),
+        ('2354', '1234'),
+        ('dcw4f', 'dcw5f'),
+    )
+    def test(self):
+        for str1, str2 in self.dataT:
+            actual = check_permutation(str1, str2)
+            self.assertTrue(actual)
+        for str1, str2 in self.dataF:
+            actual = check_permutation(str1, str2)
+            self.assertFalse(actual)
+
+if __name__ =="__main__":
+    unittest.main()
