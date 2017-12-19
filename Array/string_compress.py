@@ -3,7 +3,7 @@
 import unittest
 
 def string_compression(string):
-    
+
     i = 0
     j = 1
     res = ""
