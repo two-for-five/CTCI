@@ -1,0 +1,30 @@
+let and const to define values
+
+const can only define once
+
+var let l = 1
+l = 2
+console.log(2)
+
+const c = 1
+c = 2
+console.log(c)
+
+result: 2
+		error: assignment to constant variable
+
+
+example 2:
+	const c;
+	c = 1
+
+	error: c is undefined;
+
+example 3:
+	const c = [1,2];
+	c.push[3]
+
+	console.log(c) // [1,2,3] because c is a object
+
+	c = [1,2,4]
+	console.log(c) // error: assignment to constant variable

@@ -1,0 +1,7 @@
+undefined, null both represent empty value
+
+var c; //c = undefined 
+
+type(undefined) = undefined;
+
+type(null) = object
