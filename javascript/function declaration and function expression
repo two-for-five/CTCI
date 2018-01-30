@@ -1,3 +1,6 @@
+console.log(funcD);
+console.log(funcE);
+
 function funcD (){
 	console.log('function declaration');
 }
@@ -6,3 +9,8 @@ let functE = function(){
 	console.log('function expression');
 }
 // anonymous function save to a variable
+
+
+result:
+	function declaration
+	error functionE is variable and has scope
